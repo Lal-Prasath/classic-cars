@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+:root {
+  --background-color: #0a192f;     
+  --nav-color: #001f3f;            
+  --primary-accent: #004d77;       
+  --secondary-accent: #00b4d8;    
+  --hover-accent: #48cae4;         
+  --text-color: #ffffff;           
+  --highlight-color: #90e0ef;      
+}
+body {
+  background: url(image/login5.jpg) no-repeat center/cover;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.head {
+  position: absolute;
+  top: 52px;
+  left: -10px;
+  width: 100%;
+  border: 5px;
+  border-color:var(--nav-color);
+  background-color: rgba(26, 26, 25, 0.85);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px ;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+
+/* -------------------Classic Cars------------------------------------------------------- */
+.head h1 {
+  margin: 0;
+  display: inline-block;
+  position: relative;
+  animation: slideText 6s linear infinite;
+  font-family: "Cinzel", serif;
+  font-size: 48px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------Login Box ----------------------------------------------*/
+.login-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px #010101;
+  width: 320px;
+}
+
+.login-box h2 {
+  color:var(--highlight-color);
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: #222;
+  color: white;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.login {
+  background: var(--background-color);
+  color:var(--text-color);
+  border: none;
+  width: 40%;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login:hover {
+  background-color: var(--nav-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-size: 14px;
+}

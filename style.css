@@ -1,0 +1,709 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&family=Chonburi&family=Domine:wght@400..700&family=Fugaz+One&family=Hurricane&family=Lavishly+Yours&family=Londrina+Shadow&family=Monsieur+La+Doulaise&family=Rubik+Distressed&family=Rye&display=swap');
+:root {
+  --background-color: #0a192f;     
+  --nav-color: #001f3f;            
+  --primary-accent: #004d77;     
+  --secondary-accent: #00b4d8;    
+  --hover-accent: #48cae4;         
+  --text-color: #ffffff;         
+  --highlight-color: #90e0ef;      
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+/*--------------------------------------------------------------- Navbar ------------------------------------------------------*/
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--nav-color);
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+/* ------------------------------------------------------------------------------------------logo--------------------------------------------------------------------*/
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-family: "Londrina Shadow", sans-serif;
+  color: var(--primary-accent);
+  font-size: 34px;
+  letter-spacing: 3px;
+ animation: logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow {
+  0% { color: var(--primary-accent); }
+  100% { color: var(--hover-accent); }
+}
+/*---------------------------------------------------login-------------------------------------------------------------------------*/
+
+.login {
+  border-radius: 5px;
+  background-color: var(--primary-accent);
+  color: var(--text-color);
+  padding: 10px;
+  transition:login 0.3s;
+}
+
+.login:hover{
+  background-color: var(--hover-accent);
+  color: var(--background-color);
+}
+/*----------------------------------------------------------------------------------Menu Links------------------------------------------------------------------------------*/
+.menu {
+  display: flex;
+  gap: 25px;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 17px;
+  padding: 10px 20px;
+  position: relative;
+  transition: color 0.3s;
+}
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+ color: var(--hover-accent);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  background-color: var(--primary-accent);
+  width: 100%;
+}
+
+.menu a:hover {
+ color: var(--hover-accent);
+}
+/*----------------------------------------------------- Mobile Menu Button -------------------------------------------------------*/
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+/*----------------------------------------------------- Responsive Mobile-------------------------------------------------------*/
+@media (max-width: 768px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    display: none;
+    gap: 0;
+  }
+
+  .menu a {
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
+
+/*----------------------------------------------------------------------all page-----------------------------------------------------------*/
+
+.home, .about, .ourcars, .delivery, .gallery,.contact{
+  height: 100vh;
+  text-align: center;
+  padding-top: 100px;
+}
+
+
+/*----------------------------------------------home---------------------------------------------------------------------------*/
+.home {
+  height: 100vh;
+  font-style: normal;
+  background: url('image/cars2.jpg') no-repeat center center/cover;
+  animation: changeBackground 10s infinite alternate;
+}
+
+@keyframes changeBackground {
+  0% {
+    background-image: url('image/cars2.jpg');
+  }
+  100% {
+    background-image: url('image/cars3.jpg');
+  }
+}
+
+.heroContent h1 {
+  padding-top: 150px;
+  font-family: "Chiron Sung HK", serif;
+  text-shadow: 2px 3px 10px #000000;
+  font-size: 80PX;
+  font-weight: 900;
+  
+}
+.heroContent h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #001f3f;
+font-weight:300 ;
+font-size: 30PX;
+
+}
+
+/*------------------------------------------------------ABOUT----------------------------------------------------------------*/
+.about {
+  height: 100vh;
+  margin-top: 1PX;
+  font-family:"Chiron Sung HK", serif;
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    url('image/carf.jpg') center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/*-------------------------------------------------- Brand Logos------------------------------------------------------------ */
+.brand-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.brand-logos img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.brand-logos img:hover {
+  transform: scale(1.18);
+  box-shadow: 0 0 12px var(--hover-accent);
+}
+
+/* -------------------------------------------- Button  learn---------------------------------------------------------------*/
+
+.learn {
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+}
+/* -------------------------------------------- Button  hover---------------------------------------------------------------*/
+
+.login,
+.learn,
+.car-btn,
+.submit-btn {
+  background-color: var(--primary-accent);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+.login:hover,
+.learn:hover,
+.car-btn:hover,
+.submit-btn:hover {
+  background-color: var(--hover-accent);
+  color: var(--background-color);
+}
+/*------------------------------------------------ Layout -----------------------------------------------------------------------*/
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px 8%;
+  gap: 25px;
+}
+.leftbox {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden; 
+  position: relative;
+  cursor: pointer;
+}
+
+.leftbox-image {
+  width: 100%;
+  height: 400px; 
+  background: url('image/car6.jpg') no-repeat center center/cover;
+  transition: transform 0.8s ease-in-out; 
+}
+
+.leftbox:hover .leftbox-image {
+  transform: scale(1.1); /
+}
+
+.rightbox h2 {
+  color: var(--highlight-color);
+  font-size: 32px;
+  font-family: "Sellena Brush", cursive;
+  margin-bottom: 12px;
+}
+
+.rightbox p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ------------------------------------------------------- ----------------fact-------------------------------------------------*/
+
+.fact {
+  background:
+    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    url('image/colour2.jpg') repeat-x center/cover;
+    animation: flow 10s linear infinite;
+}
+@keyframes flow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+/* ------------------------------------------------Our Cars Section-------------------------------------------------- */
+.ourcars {
+  padding: 80px 20px;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+
+.ourcars h1 {
+  font-family: "Chiron Sung HK", serif;
+  color:white
+}
+
+.car-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;        
+  margin: 0 auto;          
+  padding: 0 20px;          
+  box-sizing: border-box;  
+}
+
+/*------------------------------------------------------- Car Card ---------------------------------------------------------*/
+.car-card {
+  background-color: #383838;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--hover-accent);
+}
+.car-card h3{
+  color:var(--highlight-color);
+
+}
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;          
+}
+
+.car-card h3 {
+  margin: 10px 0;
+}
+
+.car-card p {
+  color:var(--text-color);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.car-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* --------------------------------------------------------------Hidden Details Section ----------------------------------------------*/
+.more-details {
+  display: none;
+  margin-top: 10px;
+  background: #1a1a1b;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/*------------------------------------ Responsive Layout--------------------------------------------------------------------------- */
+@media screen and (max-width: 992px) {
+  .car-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .car-container {
+    grid-template-columns: 1fr; 
+  }
+}
+/*---------------------.delivery ------------------------------------------------------------------------------------------------------*/
+.delivery {
+  height: 70pvh;
+  background: linear-gradient(rgba(19, 19, 19, 0.6), rgba(0,0,0,0.6)),
+              url('image/carf.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: "Chiron Sung HK", serif;
+}
+
+.delivery h1 {
+  color:var(--text-color);
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-shadow: #333;
+}
+
+.delivery-intro {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  color: var(--highlight-color)
+}
+
+.delivery-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  
+}
+.feature {
+  background-color: #14213d;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature:hover {
+ transform: scale(1.15);
+  box-shadow: 0 0 15px var(--hover-accent);
+}
+
+.fa-truck,.fa-user-shield, .fa-location-crosshairs, .fa-hands-holding-child, .fa-clipboard-check {
+  font-size: 100px;
+  color: #ffffff; 
+}
+
+.feature h3 {
+  color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+.feature p {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .delivery-features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .delivery-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*------------------- -----------------------------------------Gallery Section -----------------------------------------------------------*/
+.gallery {
+  height: 200vh;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gallery-header h1 {
+  font-family: "Chiron Sung HK", serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.gallery-header p {
+  font-family: "Chiron Sung HK", serif;
+  font-size: 15px;
+  color: var(--highlight-color);
+  margin-bottom: 40px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.gallery-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  padding: 15px;
+}
+
+.gallery-item:hover {
+  opacity: 1;
+}
+
+.gallery-info h3 {
+  color: var(--highlight-color);
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.gallery-info p {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/*----------------------------------------------------- Contacts Section ------------------------------------------------------------------*/
+.contact {
+  height: 70vh;
+  background-color: #0f1b33;
+  color: var(--text-color);
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  flex: 1 1 45%;
+}
+
+.contact-item {
+  margin-bottom: 1.5rem;
+}
+
+.contact-title {
+  display: flex;
+  justify-self: start;
+  gap: 5px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.contact-text {
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* -------------------------------------Form -----------------------------------------------------------------------------------------------------------------------------*/
+.contact-form {
+  flex: 1 1 45%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.contact-form h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: #fff;
+  padding: 0 5px;
+  font-size: 14px;
+  color: #0b0b0b;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown) + .form-label {
+  top: -10px;
+  font-size: 12px;
+  color: var(--highlight-color);
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* -------------------------------------------------------------------Footer---------------------------------------------------------------- */
+.footer {
+  background-color: var(--nav-color);
+  color: var(--text-color);
+  text-align: center;
+  
+}
+
+.footer .social-icons {
+  margin-bottom: 20px;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: var(--hover-accent);
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer .company {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    flex: 1 1 100%;
+  }
+}
+/* ---------------------------------------Hide menu by default (mobile only)------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.4s ease;
+  }
+
+  .menu.show-menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
